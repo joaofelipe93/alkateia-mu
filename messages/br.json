@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Início",
+    "news": "Notícias",
+    "rankings": "Rankings",
+    "downloads": "Downloads",
+    "donate": "Doações",
+    "register": "Cadastro",
+    "login": "Entrar",
+    "logout": "Sair",
+    "usercp": "Painel",
+    "admincp": "Admin"
+  },
+  "auth": {
+    "login_title": "Acessar conta",
+    "login_subtitle": "Entre com suas credenciais do servidor",
+    "username": "Usuário",
+    "username_placeholder": "Seu nome de usuário",
+    "password": "Senha",
+    "password_placeholder": "Sua senha",
+    "login_btn": "Entrar",
+    "logging_in": "Entrando...",
+    "no_account": "Não tem conta?",
+    "create_account": "Criar conta",
+    "error_credentials": "Usuário ou senha inválidos.",
+    "error_blocked_ip": "IP bloqueado. Tente novamente em alguns minutos.",
+    "error_blocked_account": "Conta bloqueada. Entre em contato com o suporte.",
+    "error_required": "Preencha todos os campos.",
+    "error_username_len": "Usuário deve ter entre 4 e 10 caracteres.",
+    "error_password_len": "Senha deve ter entre 4 e 20 caracteres.",
+    "logout_success": "Você saiu com sucesso."
+  },
+  "register": {
+    "title": "Criar conta",
+    "subtitle": "Junte-se ao AlkateiaMU",
+    "username": "Usuário",
+    "password": "Senha",
+    "confirm_password": "Confirmar senha",
+    "email": "E-mail",
+    "register_btn": "Criar conta",
+    "have_account": "Já tem conta?",
+    "login_link": "Entrar",
+    "coming_soon": "Cadastro em breve disponível."
+  },
+  "home": {
+    "hero_title": "AlkateiaMU",
+    "hero_subtitle": "Season 8 • Servidor Brasileiro",
+    "hero_play": "Jogar Agora",
+    "hero_register": "Criar Conta",
+    "server_info": "Informações do Servidor",
+    "exp": "Experiência",
+    "master_exp": "Master EXP",
+    "drop": "Drop Rate",
+    "connect": "Conectar ao Servidor",
+    "server_ip": "IP do Servidor",
+    "server_port": "Porta",
+    "latest_news": "Últimas Notícias",
+    "view_all": "Ver todas",
+    "online_players": "Jogadores online"
+  },
+  "usercp": {
+    "title": "Painel do Jogador",
+    "welcome": "Bem-vindo, {username}!",
+    "my_account": "Minha Conta",
+    "my_characters": "Personagens",
+    "my_password": "Alterar Senha",
+    "my_email": "Alterar E-mail",
+    "webshop": "Loja",
+    "donate": "Doações",
+    "vote": "Votar",
+    "gift_code": "Código de Presente",
+    "logout": "Sair"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "not_affiliated": "AlkateiaMU não é afiliado à Webzen.",
+    "community": "Comunidade",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
+  },
+  "error": {
+    "not_found": "Página não encontrada",
+    "not_found_desc": "A página que você procura não existe.",
+    "back_home": "Voltar ao início"
+  }
+}

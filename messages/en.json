@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "Home",
+    "news": "News",
+    "rankings": "Rankings",
+    "downloads": "Downloads",
+    "donate": "Donate",
+    "register": "Register",
+    "login": "Login",
+    "logout": "Logout",
+    "usercp": "Panel",
+    "admincp": "Admin"
+  },
+  "auth": {
+    "login_title": "Sign in",
+    "login_subtitle": "Enter your server credentials",
+    "username": "Username",
+    "username_placeholder": "Your username",
+    "password": "Password",
+    "password_placeholder": "Your password",
+    "login_btn": "Sign in",
+    "logging_in": "Signing in...",
+    "no_account": "Don't have an account?",
+    "create_account": "Create account",
+    "error_credentials": "Invalid username or password.",
+    "error_blocked_ip": "IP blocked. Please try again in a few minutes.",
+    "error_blocked_account": "Account blocked. Please contact support.",
+    "error_required": "Please fill in all fields.",
+    "error_username_len": "Username must be between 4 and 10 characters.",
+    "error_password_len": "Password must be between 4 and 20 characters.",
+    "logout_success": "You have been logged out."
+  },
+  "register": {
+    "title": "Create account",
+    "subtitle": "Join AlkateiaMU",
+    "username": "Username",
+    "password": "Password",
+    "confirm_password": "Confirm password",
+    "email": "Email",
+    "register_btn": "Create account",
+    "have_account": "Already have an account?",
+    "login_link": "Sign in",
+    "coming_soon": "Registration coming soon."
+  },
+  "home": {
+    "hero_title": "AlkateiaMU",
+    "hero_subtitle": "Season 8 • Brazilian Server",
+    "hero_play": "Play Now",
+    "hero_register": "Create Account",
+    "server_info": "Server Information",
+    "exp": "Experience",
+    "master_exp": "Master EXP",
+    "drop": "Drop Rate",
+    "connect": "Connect to Server",
+    "server_ip": "Server IP",
+    "server_port": "Port",
+    "latest_news": "Latest News",
+    "view_all": "View all",
+    "online_players": "Players online"
+  },
+  "usercp": {
+    "title": "Player Panel",
+    "welcome": "Welcome, {username}!",
+    "my_account": "My Account",
+    "my_characters": "Characters",
+    "my_password": "Change Password",
+    "my_email": "Change Email",
+    "webshop": "Shop",
+    "donate": "Donate",
+    "vote": "Vote",
+    "gift_code": "Gift Code",
+    "logout": "Logout"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "not_affiliated": "AlkateiaMU is not affiliated with Webzen.",
+    "community": "Community",
+    "discord": "Discord",
+    "instagram": "Instagram",
+    "whatsapp": "WhatsApp"
+  },
+  "error": {
+    "not_found": "Page not found",
+    "not_found_desc": "The page you're looking for doesn't exist.",
+    "back_home": "Back to home"
+  }
+}

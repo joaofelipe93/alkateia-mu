@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { signIn } from 'next-auth/react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
@@ -21,7 +21,6 @@ type LoginFormData = z.infer<typeof loginSchema>
 
 export function LoginForm() {
   const t = useTranslations('auth')
-  const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams.get('callbackUrl') ?? '/usercp'
 
@@ -47,8 +46,7 @@ export function LoginForm() {
       })
 
       if (result?.ok) {
-        router.push(callbackUrl)
-        router.refresh()
+        window.location.href = callbackUrl
         return
       }
 
@@ -62,9 +60,9 @@ export function LoginForm() {
       } else {
         setError('Erro ao fazer login. Verifique seus dados e tente novamente.')
       }
+      setLoading(false)
     } catch {
       setError('Erro de conexão. Tente novamente.')
-    } finally {
       setLoading(false)
     }
   }

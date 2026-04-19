@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import {
   Swords, Newspaper, Calendar, User, Trophy, RefreshCw, Shield, ChevronRight,
 } from 'lucide-react'
@@ -67,11 +68,16 @@ export default async function HomePage() {
                   Season 8
                 </span>
               </div>
-              <h1
-                className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-wider mb-4 glow-accent"
-                style={{ color: 'var(--color-game-accent)' }}
-              >
-                AlkateiaMU
+              <h1 className="mb-4">
+                <Image
+                  src="/img/logo.png"
+                  alt="AlkateiaMU"
+                  width={512}
+                  height={512}
+                  priority
+                  className="w-64 sm:w-72 lg:w-80 h-auto drop-shadow-[0_0_20px_rgba(56,189,248,0.35)]"
+                />
+                <span className="sr-only">AlkateiaMU</span>
               </h1>
               <p className="text-lg text-[var(--color-game-muted)] max-w-xl mb-6">
                 Servidor brasileiro Season 8 com taxas equilibradas, eventos especiais e comunidade ativa.

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getNewsList, getNewsCount } from '@/lib/db/news'
+import { excerpt } from '@/lib/text'
 import { Newspaper, Calendar, User, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -15,11 +16,6 @@ function formatDate(unix: number) {
   return new Date(unix * 1000).toLocaleDateString('pt-BR', {
     day: '2-digit', month: 'long', year: 'numeric'
   })
-}
-
-function excerpt(content: string, max = 200) {
-  const stripped = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
-  return stripped.length > max ? stripped.slice(0, max) + '…' : stripped
 }
 
 interface Props {

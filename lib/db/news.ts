@@ -23,27 +23,26 @@ function decodeBase64(value: string | null): string {
 
 function decodeNewsRow(row: Record<string, unknown>): NewsItem {
   return {
-    news_id: row.news_id as number,
+    news_id: Number(row.news_id),
     news_title: decodeBase64(row.news_title as string),
     news_author: (row.news_author as string) ?? 'Staff',
-    news_date: row.news_date as number,
+    news_date: Number(row.news_date),
     news_content: decodeBase64(row.news_content as string),
-    allow_comments: (row.allow_comments as number) ?? 0,
+    allow_comments: Number(row.allow_comments) || 0,
   }
 }
 
 async function _getNewsList(limit = 10, offset = 0): Promise<NewsItem[]> {
   const db = await getDb()
+  const total = limit + offset
   const result = await db.request()
-    .input('limit', sql.Int, limit)
-    .input('offset', sql.Int, offset)
+    .input('total', sql.Int, total)
     .query(
-      `SELECT news_id, news_title, news_author, news_date, news_content, allow_comments
+      `SELECT TOP (@total) news_id, news_title, news_author, news_date, news_content, allow_comments
        FROM ${T.NEWS}
-       ORDER BY news_date DESC
-       OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY`
+       ORDER BY news_date DESC`
     )
-  return result.recordset.map(decodeNewsRow)
+  return result.recordset.slice(offset).map(decodeNewsRow)
 }
 
 async function _getNewsById(id: number): Promise<NewsItem | null> {
@@ -70,11 +69,13 @@ export const getNewsList = unstable_cache(_getNewsList, ['news-list'], {
   tags: ['news'],
 })
 
-export const getNewsById = unstable_cache(
-  (id: number) => _getNewsById(id),
-  ['news-item'],
-  { revalidate: 300, tags: ['news'] }
-)
+export function getNewsById(id: number): Promise<NewsItem | null> {
+  return unstable_cache(
+    () => _getNewsById(id),
+    ['news-item', String(id)],
+    { revalidate: 300, tags: ['news'] }
+  )()
+}
 
 export const getNewsCount = unstable_cache(_getNewsCount, ['news-count'], {
   revalidate: 300,

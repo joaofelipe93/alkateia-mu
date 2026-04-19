@@ -8,6 +8,7 @@ import { HomeLoginCard } from '@/components/home/HomeLoginCard'
 import { ServerInfoCard } from '@/components/home/ServerInfoCard'
 import { MiniRanking } from '@/components/home/MiniRanking'
 import { getNewsList } from '@/lib/db/news'
+import { excerpt } from '@/lib/text'
 import { getServerStats } from '@/lib/db/server-stats'
 import {
   getLevelRanking,
@@ -20,11 +21,6 @@ function formatDate(unix: number) {
   return new Date(unix * 1000).toLocaleDateString('pt-BR', {
     day: '2-digit', month: 'short', year: 'numeric',
   })
-}
-
-function excerpt(content: string, max = 120) {
-  const stripped = content.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim()
-  return stripped.length > max ? stripped.slice(0, max) + '…' : stripped
 }
 
 async function safe<T>(p: Promise<T>, fallback: T): Promise<T> {
@@ -207,7 +203,7 @@ export default async function HomePage() {
                     <span className="flex items-center gap-1"><User size={11} />{item.news_author}</span>
                   </div>
                   <p className="text-sm text-[var(--color-game-muted)] leading-relaxed line-clamp-3">
-                    {excerpt(item.news_content)}
+                    {excerpt(item.news_content, 120)}
                   </p>
                 </Link>
               ))}

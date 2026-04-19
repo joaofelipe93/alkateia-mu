@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { getNewsById } from '@/lib/db/news'
+import { stripHtml } from '@/lib/text'
 import { Calendar, User, ArrowLeft } from 'lucide-react'
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const news = await getNewsById(newsId).catch(() => null)
   if (!news) return { title: 'Notícia não encontrada' }
 
-  const stripped = news.news_content.replace(/<[^>]*>/g, '').slice(0, 160)
+  const stripped = stripHtml(news.news_content).slice(0, 160)
   return {
     title: news.news_title,
     description: stripped,

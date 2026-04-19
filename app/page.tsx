@@ -68,14 +68,14 @@ export default async function HomePage() {
                   Season 8
                 </span>
               </div>
-              <h1 className="mb-4">
+              <h1 className="-mt-4 -ml-4 sm:-ml-6 mb-2">
                 <Image
                   src="/img/logo.png"
                   alt="AlkateiaMU"
                   width={512}
                   height={512}
                   priority
-                  className="w-64 sm:w-72 lg:w-80 h-auto drop-shadow-[0_0_20px_rgba(56,189,248,0.35)]"
+                  className="w-[22rem] sm:w-[28rem] lg:w-[34rem] h-auto drop-shadow-[0_0_32px_rgba(56,189,248,0.45)]"
                 />
                 <span className="sr-only">AlkateiaMU</span>
               </h1>

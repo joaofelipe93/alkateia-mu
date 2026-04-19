@@ -172,20 +172,11 @@ export default async function HomePage() {
           </div>
 
           {news.length === 0 ? (
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4].map(i => (
-                <div
-                  key={i}
-                  className="bg-[var(--color-game-bg)] border border-[var(--color-game-border)] rounded-lg p-5 animate-pulse"
-                >
-                  <div className="h-3 bg-[var(--color-game-border-bright)] rounded mb-3" />
-                  <div className="h-2 bg-[var(--color-game-border)] rounded mb-2 w-3/4" />
-                  <div className="mt-4 space-y-1.5">
-                    <div className="h-2 bg-[var(--color-game-border)] rounded" />
-                    <div className="h-2 bg-[var(--color-game-border)] rounded w-4/5" />
-                  </div>
-                </div>
-              ))}
+            <div className="text-center py-12 bg-[var(--color-game-bg)] border border-[var(--color-game-border)] rounded-xl">
+              <Newspaper size={32} className="mx-auto mb-3 text-[var(--color-game-muted)] opacity-40" />
+              <p className="text-sm text-[var(--color-game-muted)]">
+                Nenhuma notícia publicada ainda.
+              </p>
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">

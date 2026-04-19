@@ -59,9 +59,10 @@ export function Footer() {
               Servidor
             </h3>
             <div className="space-y-1 text-xs text-[var(--color-game-muted)]">
-              <p>IP: <span className="text-[var(--color-game-accent)] font-mono">66.70.148.55</span></p>
-              <p>Porta: <span className="text-[var(--color-game-accent)] font-mono">44405</span></p>
               <p>Season 8 • XTeam Files</p>
+              <p>EXP: 200x ~ 350x</p>
+              <p>Master EXP: 10x ~ 15x</p>
+              <p>Drop: 10% ~ 25%</p>
             </div>
           </div>
         </div>
